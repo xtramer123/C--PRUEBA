@@ -43,13 +43,13 @@ void read(nodo *acutal)
     if (acutal != NULL)
     {
         if (acutal->ant == fin)
-            cout << inicio->ant->dato << " <- ";
+            cout << "(FIN) " << inicio->ant->dato << " <- ";
         // hacia atras
         cout << acutal->dato << " -> ";
         // hacia delante
         if (acutal->sig == inicio)
         {
-            cout << acutal->sig->dato << "  [ ]";
+            cout << acutal->sig->dato << " (INICIO) ";
             return;
         }
         else
