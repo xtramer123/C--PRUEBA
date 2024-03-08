@@ -16,6 +16,7 @@ nodo *final = NULL;
 
 void agregar();
 void mostrar();
+void ordenar();
 void agregar()
 {
     nodo *nuevo = new nodo;
@@ -44,6 +45,26 @@ void mostrar()
     }
 }
 
+void ordenar()
+{
+    nodo *menor = inicio;
+    while (menor != NULL)
+    {
+        nodo *sig = menor->sgt;
+        while (sig != NULL)
+        {
+            if (menor->dato > sig->dato)
+            {
+                int copia = menor->dato;
+                menor->dato = sig->dato;
+                sig->dato = copia;
+            }
+            sig = sig->sgt;
+        }
+        menor = menor->sgt;
+    }
+}
+
 int main()
 {
     int n;
@@ -52,6 +73,7 @@ int main()
         cout << ".:.MENU.:." << endl;
         cout << "1) Agregar" << endl;
         cout << "2) Visualizar" << endl;
+        cout << "3) Ordenar" << endl;
         cout << "Ingresar: ";
         cin >> n;
         switch (n)
@@ -65,12 +87,16 @@ int main()
             mostrar();
             system("pause");
             break;
+        case 3:
+            ordenar();
+            system("pause");
+            break;
         default:
             cout << "OPCION NO VALIDA" << endl;
             system("pause");
             break;
         }
         system("cls");
-    } while (n != 3);
+    } while (n != 4);
     return 0;
 }
