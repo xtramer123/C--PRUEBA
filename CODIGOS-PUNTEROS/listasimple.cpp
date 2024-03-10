@@ -63,6 +63,7 @@ void ordenar()
         }
         menor = menor->sgt;
     }
+    mostrar();
 }
 
 int main()
