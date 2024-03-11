@@ -1,3 +1,5 @@
 .vscode
-build/Debug
+build\Debug
+merge_short.o
+outDebug.exe
 output
